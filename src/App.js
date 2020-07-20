@@ -51,7 +51,7 @@ export default function App() {
 
   return (
     <div>
-      <Header />
+      <Header isOpen={isModalOpen}/>
       <section className='row'>
         <div className={`col xl4 l4 m12 s12 ${css.formContainer}`}>
           <Form

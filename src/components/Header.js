@@ -4,7 +4,7 @@ import css from '../css.modules/header.module.css';
 import logo from '../assets/images/logo.png';
 import icon from '../assets/images/icon.png';
 
-export default function Header() {
+export default function Header({isOpen}) {
   return (
     <div className={`${css.headerContainer}`}>
       <nav className="nav-wrapper">
@@ -19,7 +19,7 @@ export default function Header() {
           data-target="mobile-navbar"
           className="right sidenav-trigger"
         >
-          <i className={`material-icons ${css.menuIcon}`}>menu</i>
+          {!isOpen && <i className={`material-icons ${css.menuIcon}`}>menu</i>}
         </a>
 
         <ul
