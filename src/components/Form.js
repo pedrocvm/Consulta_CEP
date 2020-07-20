@@ -16,7 +16,7 @@ export default function Form({getCep, newSearch, enableBtn, visibility, onOpen})
       }
     }
     handleNewSearch();
-  }, [newSearch]);
+  }, [enableBtn]);
 
   const masking = (event) => {
     setvalue(mask(event.target.value, ['99999-999']));

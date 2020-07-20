@@ -11,7 +11,7 @@ export default function App() {
   const [selectedCep, setSelectedCep] = useState(null);
   const [message, setMessage] = useState('');
   const [newSearch, setNewSearch] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+
   const [enable, setEnable] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -20,10 +20,9 @@ export default function App() {
     if (!cep.erro) {
       setSelectedCep(cep);
       setMessage('');
-      setIsVisible(true);
     } else {
       setSelectedCep(false);
-      setIsVisible(true);
+
       setMessage('CEP não encontrado');
     }
   };
@@ -34,12 +33,11 @@ export default function App() {
 
   const handleNewSearch = () => {
     setNewSearch(true);
-    setIsVisible(false);
   };
 
   const handleOpen = () => {
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const handleClose = () => {
     setIsModalOpen(false);
@@ -51,8 +49,8 @@ export default function App() {
 
   return (
     <div>
-      <Header isOpen={isModalOpen}/>
-      <section className='row'>
+      <Header isOpen={isModalOpen} />
+      <section className="row">
         <div className={`col xl4 l4 m12 s12 ${css.formContainer}`}>
           <Form
             getCep={getMyCep}
@@ -62,16 +60,16 @@ export default function App() {
             onOpen={handleOpen}
           />
         </div>
-        <div className={`col xl8 l8 m12 s12 ${css.queryContainer}`}>
-        </div>
-        {isModalOpen && 
-        <CepModal
-        onClose={handleClose}
-        selectedCep={selectedCep}
-        message={message}
-        isANewSearch={handleNewSearch}
-        visibility={disableSearchButton}
-        />}
+        <div className={`col xl8 l8 m12 s12 ${css.queryContainer}`}></div>
+        {isModalOpen && (
+          <CepModal
+            onClose={handleClose}
+            selectedCep={selectedCep}
+            message={message}
+            isANewSearch={handleNewSearch}
+            visibility={disableSearchButton}
+          />
+        )}
       </section>
     </div>
   );
