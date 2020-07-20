@@ -1,7 +1,7 @@
 /* eslint-disable */
 import axios from 'axios';
 
-const API_URL = 'https://viacep.com.br/ws';
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 const getCep = async (cep) => {
