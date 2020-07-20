@@ -7,24 +7,20 @@ export default function QueryResult({
   message,
   isANewSearch,
   visibility,
+  onClose
 }) {
   // const { logradouro, bairro, localidade, uf, cep } = selectedCep;
 
   const newSearch = () => {
     isANewSearch();
     visibility();
+    onClose()
   };
 
   return (
     <div className={css.queryContainer}>
       {selectedCep && (
         <div className={css.addressContainer}>
-          <button
-            className={`${css.closeBtn}`}
-            onClick={newSearch}
-          >
-            <i className="material-icons">close</i>
-          </button>
           <div className={css.addressInfo}>
             <h5 className={css.logradouro}>{selectedCep.logradouro}</h5>
             <span className={css.address}>{selectedCep.bairro}</span>
@@ -51,15 +47,9 @@ export default function QueryResult({
       )}
       {!selectedCep && (
         <div className={css.messageContainer}>
-          <button
-            className={`${css.closeBtnMsg}`}
-            onClick={newSearch}
-          >
-            <i className="material-icons">close</i>
-          </button>
           <h5 className={css.message}>{message}</h5>
           <button className={`btn ${css.btnMsg}`} onClick={newSearch}>
-            Tentar Novamente
+            Nova Busca
           </button>
         </div>
       )}

@@ -3,7 +3,7 @@ import { mask } from 'remask';
 import { labelUp, labelDown } from '../helpers/helper.js';
 import css from '../css.modules/form.module.css';
 
-export default function Form({getCep, newSearch, enableBtn, visibility}) {
+export default function Form({getCep, newSearch, enableBtn, visibility, onOpen}) {
   const [value, setvalue] = useState('');
   
   
@@ -22,7 +22,6 @@ export default function Form({getCep, newSearch, enableBtn, visibility}) {
     setvalue(mask(event.target.value, ['99999-999']));
   };
 
-
   
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -33,6 +32,7 @@ export default function Form({getCep, newSearch, enableBtn, visibility}) {
       if(cep.length === 8){
         getCep(cep)
         visibility()
+        onOpen()
       }
     }
     else{

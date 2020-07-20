@@ -5,7 +5,7 @@ import css from './css.modules/app.module.css';
 import Form from './components/Form';
 import Header from './components/Header';
 import M from 'materialize-css';
-import QueryResult from './components/QueryResult';
+import CepModal from './components/CepModal.js';
 
 export default function App() {
   const [selectedCep, setSelectedCep] = useState(null);
@@ -13,6 +13,7 @@ export default function App() {
   const [newSearch, setNewSearch] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [enable, setEnable] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const getMyCep = async (data) => {
     const cep = await api.getCep(data);
@@ -31,10 +32,17 @@ export default function App() {
     setEnable(!enable);
   };
 
-
   const handleNewSearch = () => {
     setNewSearch(true);
     setIsVisible(false);
+  };
+
+  const handleOpen = () => {
+    setIsModalOpen(true)
+  }
+
+  const handleClose = () => {
+    setIsModalOpen(false);
   };
 
   useEffect(() => {
@@ -44,25 +52,26 @@ export default function App() {
   return (
     <div>
       <Header />
-      <section className={`row ${css.appContainer}`}>
-        <div className="col xl4 l4 m12 s12">
+      <section className='row'>
+        <div className={`col xl4 l4 m12 s12 ${css.formContainer}`}>
           <Form
             getCep={getMyCep}
             newSearch={newSearch}
             enableBtn={enable}
             visibility={disableSearchButton}
+            onOpen={handleOpen}
           />
         </div>
         <div className={`col xl8 l8 m12 s12 ${css.queryContainer}`}>
-          {isVisible && (
-            <QueryResult
-              selectedCep={selectedCep}
-              message={message}
-              isANewSearch={handleNewSearch}
-              visibility={disableSearchButton}
-            />
-          )}
         </div>
+        {isModalOpen && 
+        <CepModal
+        onClose={handleClose}
+        selectedCep={selectedCep}
+        message={message}
+        isANewSearch={handleNewSearch}
+        visibility={disableSearchButton}
+        />}
       </section>
     </div>
   );

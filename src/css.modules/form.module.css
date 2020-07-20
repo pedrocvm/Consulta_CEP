@@ -1,6 +1,8 @@
 .formTitle {
   font-family: 'Raleway Black';
   color: #ff0019;
+  text-align: left;
+  width: 300px;
 }
 
 .formDescription {
@@ -25,11 +27,10 @@ i[className='active'] {
 
 .formContainer{
   height: 55vh;
-  margin-left: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 @media (min-width: 993px){
@@ -53,12 +54,13 @@ i[className='active'] {
   .formTitle, span, form {
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
   }
 }
 
 @media (max-width: 992px) and (min-width: 487px){
   .formContainer{
-    margin-top: 30px;
+    margin-top: -30px;
   }
 
   form{
@@ -73,7 +75,7 @@ i[className='active'] {
 
 @media (max-width: 486px){
   .formContainer{
-    margin-top: 30px;
+    margin-top: -30px;
   }
   
   form{
@@ -84,7 +86,7 @@ i[className='active'] {
   }
   .formDescription{
     text-align: center;
-    width: 100%;
+    width: 250px;
   }
 }
 

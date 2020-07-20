@@ -1,26 +1,43 @@
 .queryContainer {
   display: block;
-  padding: 23px;
-  width: 62vw;
+  width: 100%;
+  height: 100%;
 }
 
-@media(max-width: 992px){
-  .queryContainer{
+@media (max-width: 992px) {
+  .queryContainer {
     width: 100%;
     height: 100%;
+  }
+
+  .btnMsg {
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
 .addressContainer {
   background-color: white;
   display: block;
-  padding: 15px 80px;
+  padding: 10px;
 }
 
 .logradouro {
   color: #ff0019;
   font-family: 'Raleway Black';
   margin-bottom: 5px;
+}
+
+@media (max-width: 720px) {
+  .logradouro {
+    font-size: 15pt;
+  }
+}
+
+@media (max-width: 500px) {
+  .logradouro {
+    font-size: 12pt;
+  }
 }
 
 .address {
@@ -33,38 +50,35 @@
   padding: 30px;
 }
 
-@media(min-width: 993px){
-  .messageContainer{
-    margin: 18.65% 0;
+@media (min-width: 993px) {
+  .messageContainer {
     width: 100%;
     text-align: center;
   }
-
 }
 
-@media(max-width: 992px){
-  .messageContainer{
+@media (max-width: 992px) {
+  .messageContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .messageContainer h5{
+  .messageContainer h5 {
     display: flex;
     flex-direction: column;
-    justify-content: center!important;
+    justify-content: center !important;
     align-items: center;
   }
 
-  .closeBtnMsg{
+  .closeBtnMsg {
     position: absolute;
     right: 95px;
     bottom: 60px;
   }
 
-  .btnMsg{
-    
+  .btnMsg {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -75,6 +89,15 @@
 .message {
   color: #ff0019;
   font-family: 'Raleway Black';
+}
+
+@media (max-width: 412px) {
+  .message {
+    font-size: 12pt;
+  }
+  .btnMsg{
+    padding: 5px 20px!important
+  }
 }
 
 .btnMsg {
@@ -104,8 +127,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-right: -20px;
+  margin-top: -10px;
   align-items: center;
-  margin-right: -60px;
   border: none;
   background-color: transparent;
   color: black;
@@ -130,11 +154,11 @@
   cursor: pointer;
 }
 
-.addressInfo{
+.addressInfo {
   margin-bottom: 20px;
 }
 
-.addressInfo span{
+.addressInfo span {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
