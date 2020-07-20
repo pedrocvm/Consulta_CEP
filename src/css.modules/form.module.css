@@ -1,0 +1,106 @@
+.formTitle {
+  font-family: 'Raleway Black';
+  color: #ff0019;
+}
+
+.formDescription {
+  font-family: 'Metropolis Regular';
+  color: grey;
+  text-align: left;
+  width: 300px;
+}
+
+input:not([type]):focus:not([readonly]),
+input[type='text']:not(.browser-default):focus:not([readonly]),
+i[className='active'] {
+  border-bottom: 1px solid #ff0019;
+  box-shadow: 0 1px 0 0 #ff0019;
+}
+
+input:not([type]):focus:not([readonly]) + label,
+input[type='text']:not(.browser-default):focus:not([readonly]) + label,
+i[className='active'] {
+  color: #ff0019;
+}
+
+.formContainer{
+  height: 55vh;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media (min-width: 993px){
+  form{
+    width: 295px;
+    height: 0px;
+  }
+  .formContainer{
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .btn{
+    float: left;
+  }
+}
+
+@media (max-width: 992px){
+  form{
+    width: 100%
+  }
+  .formTitle, span, form {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 487px){
+  .formContainer{
+    margin-top: 30px;
+  }
+
+  form{
+    width: 380px
+  }
+  .formDescription{
+    text-align: center;
+    width: 400px;
+  }
+
+}
+
+@media (max-width: 486px){
+  .formContainer{
+    margin-top: 30px;
+  }
+  
+  form{
+    width: 200px;
+  }
+  form .btn{
+    padding: 0 30px;
+  }
+  .formDescription{
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.btn{
+  background-color: #ff0019;
+  transition: all 0.4s;
+  border-radius: 20px;
+  padding: 0px 85px;
+}
+
+.btn:hover{
+  background-color: #ff0019;
+  filter: opacity(0.8);
+  transform: scale(0.85);
+}
+
+.btn:active, .btn:focus{
+  background-color: #ff0019;
+}

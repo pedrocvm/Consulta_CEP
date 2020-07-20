@@ -1,0 +1,14 @@
+.appContainer{
+  margin: 0 35px;
+
+}
+
+.queryContainer{
+  background-color: #ff0019;
+  border-left: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

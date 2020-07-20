@@ -1,0 +1,142 @@
+.queryContainer {
+  display: block;
+  padding: 23px;
+  width: 62vw;
+}
+
+@media(max-width: 992px){
+  .queryContainer{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.addressContainer {
+  background-color: white;
+  display: block;
+  padding: 15px 80px;
+}
+
+.logradouro {
+  color: #ff0019;
+  font-family: 'Raleway Black';
+  margin-bottom: 5px;
+}
+
+.address {
+  font-family: 'Metropolis Regular';
+  color: grey;
+}
+
+.messageContainer {
+  background-color: white;
+  padding: 30px;
+}
+
+@media(min-width: 993px){
+  .messageContainer{
+    margin: 18.65% 0;
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+@media(max-width: 992px){
+  .messageContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .messageContainer h5{
+    display: flex;
+    flex-direction: column;
+    justify-content: center!important;
+    align-items: center;
+  }
+
+  .closeBtnMsg{
+    position: absolute;
+    right: 95px;
+    bottom: 60px;
+  }
+
+  .btnMsg{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.message {
+  color: #ff0019;
+  font-family: 'Raleway Black';
+}
+
+.btnMsg {
+  margin-top: 30px;
+  background-color: #ff0019;
+  transition: all 0.4s;
+  border-radius: 20px;
+  padding: 0px 50px;
+}
+
+.btnMsg:hover {
+  background-color: #ff0019;
+  filter: opacity(0.8);
+  transform: scale(0.85);
+}
+
+.btnMsg:active,
+.btnMsg:focus {
+  background-color: #ff0019;
+}
+
+.closeBtn,
+.closeBtn:hover,
+.closeBtn:active,
+.closeBtn:focus {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: -60px;
+  border: none;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+}
+
+.closeBtnMsg,
+.closeBtnMsg:hover,
+.closeBtnMsg:active,
+.closeBtnMsg:focus {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: black;
+  margin-top: -20px;
+  margin-right: -30px;
+  padding: 0px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.addressInfo{
+  margin-bottom: 20px;
+}
+
+.addressInfo span{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
