@@ -24,21 +24,26 @@ export default function Form({getCep, newSearch, enableBtn, visibility, onOpen})
 
   
   const handleFormSubmit = (event) => {
-    event.preventDefault();
-    if(value){
-      const formData = new FormData(event.target);
-      const data = Object.fromEntries(formData);
-      const cep = data.nr_cep.replace('-', '');
-      if(cep.length === 8){
-        getCep(cep)
-        visibility()
-        onOpen()
+    try{
+      event.preventDefault();
+      if(value){
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData);
+        const cep = data.nr_cep.replace('-', '');
+        if(cep.length === 8){
+          getCep(cep)
+          visibility()
+          onOpen()
+        }
+      }
+      else{
+        document.querySelector('#nr_cep').focus();
       }
     }
-    else{
-      document.querySelector('#nr_cep').focus();
-    }
-  }
+    catch(err){
+      console.log(err.message);
+    };
+  };
 
   return (
     <div className={`center ${css.formContainer}`}>
